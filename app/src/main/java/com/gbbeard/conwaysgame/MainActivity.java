@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity
     public ImageView imageView;
     public Bitmap mBitmap;
     public Canvas mCanvas;
+    public int xDown;
+    public int yDown;
 
 
     private Button mTick;
@@ -135,9 +137,6 @@ public class MainActivity extends AppCompatActivity
         imageView.setImageBitmap(mBitmap);
     }
 
-    private int xDown;
-    private int yDown;
-
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         int action = motionEvent.getAction();
@@ -145,8 +144,6 @@ public class MainActivity extends AppCompatActivity
         float yy = motionEvent.getY();
         drawGrid();
         if (action == MotionEvent.ACTION_DOWN) {
-            Log.d("ACTION", "down");
-
             xDown = (int) xx / cellSize;
             yDown = (int) yy / cellSize;
             return true;
