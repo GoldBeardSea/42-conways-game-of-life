@@ -20,7 +20,6 @@ import butterknife.ButterKnife;
 public class ConwaysActivity extends AppCompatActivity
         implements ViewTreeObserver.OnGlobalLayoutListener, View.OnTouchListener{
 
-    @BindView(R.id.imageView)
     public ImageView imageView;
     public Bitmap mBitmap;
     public Canvas mCanvas;
@@ -143,8 +142,6 @@ public class ConwaysActivity extends AppCompatActivity
         float yy = motionEvent.getY();
         drawGrid();
         if (action == MotionEvent.ACTION_DOWN) {
-            Log.d("ACTION", "down");
-
             xDown = (int) xx / cellSize;
             yDown = (int) yy / cellSize;
             return true;
